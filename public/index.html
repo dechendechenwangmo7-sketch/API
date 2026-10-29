@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow | Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Using 'Inter', the standard font for modern tech companies -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Sidebar Navigation (Adds a professional app feel) -->
+  <nav class="sidebar">
+    <div class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-layer-group"></i></div>
+      <span>TaskFlow</span>
+    </div>
+    
+    <ul class="nav-links">
+      <li class="active"><i class="fa-solid fa-inbox"></i> Inbox</li>
+      <li><i class="fa-solid fa-calendar-day"></i> Today</li>
+      <li><i class="fa-solid fa-chart-simple"></i> Analytics</li>
+    </ul>
+
+    <div class="user-profile">
+      <div class="avatar">U</div>
+      <div class="user-info">
+        <span class="name">User Name</span>
+        <span class="role">Student</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <header class="top-header">
+      <h1>Workspace</h1>
+      <button id="add-btn-top" onclick="document.getElementById('task-input').focus()">
+        <i class="fa-solid fa-plus"></i> New Task
+      </button>
+    </header>
+
+    <div class="workspace-container">
+      
+      <!-- Task Input Card -->
+      <div class="input-section">
+        <div class="input-header">
+          <h3>Create Task</h3>
+          <span class="badge">Required</span>
+        </div>
+        <div class="input-group">
+          <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off">
+          <button id="add-btn" onclick="addTask()">Add</button>
+        </div>
+        <p class="hint-text"><i class="fa-solid fa-circle-info"></i> Press Enter to quickly add a task.</p>
+      </div>
+
+      <!-- Task List Card -->
+      <div class="list-section">
+        <div class="list-header">
+          <h2>My Tasks</h2>
+          <span class="task-count" id="task-count">0</span>
+        </div>
+
+        <ul id="task-list" class="task-list"></ul>
+        <div id="loading" class="loading"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading workspace...</div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
